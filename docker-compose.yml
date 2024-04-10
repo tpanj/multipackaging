@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  ubuntu_2204:
+    build:
+      context: docker/ubuntu_2204
+    volumes: &default_volumes # define volumes template
+      - ./produced:/out:rw # where packages will be dropped
+      - ./package:/package:rw
+      - ./src:/src:r
+      - ./docker/entry.bash:/usr/local/bin/entrypoint.sh
+    entrypoint: /usr/local/bin/entrypoint.sh
+  fedora_latest:
+    build:
+      context: docker/fedora_latest
+    volumes: *default_volumes # use volumes template
+    entrypoint: /usr/local/bin/entrypoint.sh
+  debian_12:
+    build:
+      context: docker/debian_12
+    volumes: *default_volumes
+    entrypoint: /usr/local/bin/entrypoint.sh
+  arch_latest:
+    build:
+      context: docker/arch_latest
+    volumes: *default_volumes
+    entrypoint: /usr/local/bin/entrypoint.sh
