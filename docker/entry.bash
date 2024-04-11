@@ -9,9 +9,8 @@ source ~/.bashrc
 # - one long arguments list for fpm with little changes for packaging system with help of variables
 # - in fpm-env.sh are specifics (${PKG}, ${EXT} or ${DEPENDS})
 # - use this example when packaging simple scripts, datafiles
-#
-# . /package/${BASED,,}/fpm-env.sh # get package type environment variables
 
+. /package/${BASED,,}/fpm-env.sh # get package type environment variables
 fpm \
   -s dir -t ${PKG} \
   -p /out/hello-world-0.1.0-1.$(lsb_release -si)_$(lsb_release -sr).noarch.${EXT} \
@@ -37,7 +36,6 @@ fpm \
 
 # . /package/common.sh
 # . /package/${BASED,,}/fpm-env.sh # get package type environment variables, overwrite common
-#
 # fpm \
 #   -s dir -t ${PKG} \
 #   -p /out/hello-world-0.1.0-2.$(lsb_release -si)_$(lsb_release -sr).noarch.${EXT} \
@@ -63,7 +61,6 @@ fpm \
 # - use this example when packaging native compiled app along with datafiles
 
 # . /package/${BASED,,}/fpm-env.sh # get package type environment variables
-
 # mkdir /build
 # cd /build
 # cmake ../src &&

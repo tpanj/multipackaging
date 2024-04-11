@@ -9,10 +9,10 @@ There are (too)many ways for creating [packages for Linux](Doc/packaging.md) and
 
 Just as easy as running `docker-compose up` and packages will be ready.
 ```
-packaging-fedora_latest-1  | {..., :message=>"Created package", :path=>"/out/hello-world-0.1.0-1-any_Fedora_39.rpm"}
-packaging-debian_12-1      | {..., :message=>"Created package", :path=>"/out/hello-world-0.1.0-1-any_Debian_12.deb"}
-packaging-ubuntu_2204-1    | {..., :message=>"Created package", :path=>"/out/hello-world-0.1.0-1-any_Ubuntu_22.04.deb"}
-packaging-arch_latest-1    | {..., :message=>"Created package", :path=>"/out/hello-world-0.1.0-1-any_Arch_rolling.pkg.tar.zst"}
+..., :message=>"Created", :path=>"/out/hello-world-0.1.0-1-any_Fedora_39.rpm"}
+..., :message=>"Created", :path=>"/out/hello-world-0.1.0-1-any_Debian_12.deb"}
+..., :message=>"Created", :path=>"/out/hello-world-0.1.0-1-any_Ubuntu_22.04.deb"}
+..., :message=>"Created", :path=>"/out/hello-world-0.1.0-1-any_Arch_rolling.pkg.tar.zst"}
 ```
 
 ## Start
@@ -45,6 +45,7 @@ Preparation:
 git clone https://github.com/tpanj/multipackaging 
 cd multipackaging
 mkdir src
+cd src
 bash ../generate-src-contents.sh
 cd ..
 docker-compose up
@@ -54,7 +55,8 @@ docker-compose up
 
 Preparation:
 
-Use source code from Example 1 and just edit docker/entry.bash to enable only Example 2 before running `docker-compose up`.
+Use source code from Example 1 and just edit [docker/entry.bash](docker/entry.bash)
+ to enable only Example 2 before running `docker-compose up`.
 
 ### Example 3
 
@@ -71,8 +73,9 @@ docker-compose up
 ## Cleaning
 
 Command `docker-compose down` will clean up working containers but not generated packets.
----------
-**Links**
+
+
+# Thanks
 
 This repository will not exist without software:
 
