@@ -10,6 +10,7 @@ source ~/.bashrc
 # - in fpm-env.sh are specifics (${PKG}, ${EXT} or ${DEPENDS})
 # - use this example when packaging simple scripts, datafiles
 
+. /package/common.sh
 . /package/${BASED,,}/fpm-env.sh # get package type environment variables
 fpm \
   -s dir -t ${PKG} \

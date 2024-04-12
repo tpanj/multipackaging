@@ -54,9 +54,13 @@ docker-compose up
 ### Example 2
 
 Preparation:
+Use source code from Example 1.
 
-Use source code from Example 1 and just edit [docker/entry.bash](docker/entry.bash)
- to enable only Example 2 before running `docker-compose up`.
+```sh
+# edit docker/entry.bash to enable only Example 2
+for s in after-install after-remove; do echo "echo \"$s\" | lolcat" > ./package/$s.sh; done
+docker-compose up
+```
 
 ### Example 3
 

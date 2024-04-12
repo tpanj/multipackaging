@@ -1,3 +1,4 @@
 src/
+produced/
 package/after-*.sh
 package/before-*.sh
